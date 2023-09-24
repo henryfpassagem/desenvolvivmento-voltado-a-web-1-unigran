@@ -2,8 +2,21 @@
     background-color: greenyellow;
 }
 
+.curso {
+    font-style: italic;
+}
+
+.disciplina{
+    color: aqua;
+}
+
 .clock {
+    font-family: 'Times New Roman', Times, serif;
     color: yellow;
+}
+
+.network {
+    color: plum;
 }
 
 /* Dropdown Button */
