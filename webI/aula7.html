@@ -3,14 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
     <title>Document</title>
 </head>
 <body>
-    <h2>AULAS 01 e 02 – FUNDAMENTOS WEB / CLIENTE/SERVIDOR</h2>
+    <h2>AULAS 07 – FUNDAMENTOS EM CSS</h2>
     <ol style="width: 45%;">
-        <li>Neste primeiro momento, gostaria de levá-lo a refletir: Quando e como ocorreu seu primeiro contato com a internet? Quais os recursos e utilidades eram disponíveis na época? Qual era o navegador utilizado? Quais eram as características do layout e do conteúdo? De lá pra cá, muita coisa mudou? Descreva sua experiência.</li><br>
-        <li>Descreva com suas palavras e entendimento o que é URL. Diferencie e exemplifique URL absoluta e URL relativa. Quando se faz uso de uma ou de outra?</li><br>
-        <li>Antes da leitura da Aula 01, você sabia diferenciar os termos: home-page, página web e web site? Justifique sua resposta e ainda comente sobre cada um deles de forma a diferenciá-los.</li>
-    </ol>
+        <li>Leia atentamente o guia de estudos e realize testes simulando as situações abaixo, e marque apenas as alternativas verdadeiras  e justifique-as.
+            <ul>
+                <li><strong class="verdade">a)</strong> Uma mesma folha de estilos pode ser usada por várias páginas.<p>Verdadeira: Uma mesma folha de estilos pode ser usada por várias páginas, o que é uma prática eficiente para manter a consistência na aparência de um site.</p></li>
+
+                <li><strong class="verdade">b)</strong> Uma mesma página pode usar várias folhas de estilo.<p>Verdadeira: Uma mesma página pode usar várias folhas de estilo. Isso permite uma maior flexibilidade no design, pois diferentes estilos podem ser aplicados em partes específicas da página.</p></li>
+
+                <li><strong class="verdade">c)</strong> Se um browser não suportar uma folha de estilos requerida pela página, poderá ha-ver uma degradação na qualidade da apresentação mas nunca haverá perda de in-formação.<p>Verdadeira: Se um navegador não suportar uma folha de estilos requerida pela página, pode haver uma degradação na qualidade da apresentação, mas a informação ainda estará acessível. Isso ocorre porque o conteúdo HTML não é afetado pela falta de suporte a CSS.</p></li>
+
+                <li><strong>d)</strong> É possível construir um site inteiro usando apenas CSS.<p>Falso.</p></li>
+
+                <li><strong class="verdade">e)</strong> A linguagem CSS usada para construir folhas de estilo é uma recomendação do W3C – consórcio de empresas que estabelece os padrões para a Web.<p>Verdadeira: A linguagem CSS (Cascading Style Sheets) usada para construir folhas de estilo é uma recomendação do W3C (World Wide Web Consortium), o que significa que é um padrão internacional amplamente aceito para estilização de páginas da web.</p></li>
+            </ul>
+
+        <li>No exemplo, Material de Aula – Arquivo  Template, qual a forma utilizada para a inserção dos estilos na página index.html? Justifique sua resposta.
+            <p> 
+                Resposta:
+                a) Link para Folhas de Estilo Externas: Os estilos são incluídos usando a tag `<link>`. Isso é feito com as linhas:</p>
+                <img src="styleCSS.png" alt="styleCSS"> 
+
+            <p>
+                Essas linhas estão vinculando dois arquivos de estilo externos (`main.css` e `estilos.css`) à página. Esses arquivos contêm as regras de estilo que serão aplicadas ao conteúdo da página.
+                b) Estilos Inline e Internos: Dentro do arquivo HTML, também são usados estilos diretamente nas tags HTML. Por exemplo, em `<body class="is-preload">`, a classe `is-preload` é usada para aplicar estilos específicos a esse elemento.
+                A justificativa para essa abordagem é que ela permite separar a estrutura do conteúdo HTML (no arquivo `index.html`) da apresentação (nos arquivos de estilo externos), seguindo boas práticas de desenvolvimento web. Além disso, a aplicação de estilos inline ou internos é feita em casos específicos onde é necessário estilizar um elemento individualmente, mas a maioria das regras de estilo é mantida em arquivos externos para facilitar a manutenção e a consistência do design em todo o site.
+            </p>
+
+        </li>
+
+            
+           
+    
+        </ol>
 </body>
 </html>

@@ -3,24 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulário com JavaScript</title>
+    <script>
+        function validarFormulario() {
+            var camposObrigatorios = document.querySelectorAll('.required');
+            
+            for (var i = 0; i < camposObrigatorios.length; i++) {
+                var campo = camposObrigatorios[i];
+                
+                if (campo.value.trim() === '') {
+                    alert('Por favor, preencha todos os campos obrigatórios.');
+                    return false;
+                }
+            }
+            
+            alert('Formulário validado com Sucesso!!');
+            return true;
+        }
+
+        window.onload = function () {
+            var nomeInput = document.getElementById('nome');
+            var emailInput = document.getElementById('email');
+            var idadeInput = document.getElementById('idade');
+            var voltarButton = document.getElementById('voltar');
+            var limparButton = document.getElementById('limpar');
+            var enviarButton = document.getElementById('enviar');
+            
+            nomeInput.setAttribute("type","text");
+            emailInput.setAttribute("type", "email");
+            idadeInput.setAttribute("type", "number");
+            voltarButton.setAttribute("type","button");
+            limparButton.setAttribute("type","reset");
+            enviarButton.setAttribute("type","submit");
+
+            idadeInput.addEventListener('input', function () {
+                if (isNaN(idadeInput.value) || idadeInput.value < 0) {
+                    idadeInput.setCustomValidity('A idade deve ser um número válido e positivo.');
+                } else {
+                    idadeInput.setCustomValidity('');
+                }
+            });
+
+            idadeInput.addEventListener('paste', function (event) {
+                event.preventDefault(); // Impede a colagem
+            });
+        }
+    </script> 
 </head>
 <body>
-    <form action="envia.html" method="get" style="font-family: Arial;">
-        <h3>FORMULÁRIO - CADASTRO DE CLIENTES</h3>
+    <form action="envia.html" method="get" style="font-family: Arial;" onsubmit="return validarFormulario();">
+        <h3>CAMPOS DO FORMULÁRIO VALIDADOS COM O JAVASCRIPT</h3>
         <label for="nome">NOME</label><br>
-        <input type="text" name="nome" id="nome" required><br><br>
+        <input name="nome" id="nome" class="required"><br><br>
 
         <label for="email">EMAIL</label><br>
-        <input type="email" name="email" id="email" required><br><br>
+        <input name="email" id="email" class="required"><br><br>
 
         <label for="idade">IDADE</label><br>
-        <input name="idade" id="idade" required><br><br>
+        <input type="number" name="idade" id="idade" class="required"><br><br>
 
-        <button type="button" onclick="window.location.href = 'index.html'">VOLTAR</button>
-        <input type="reset" value="LIMPAR">
-        <input type="submit" value="ENVIAR">
+        <button id="voltar" onclick="window.location.href = 'index.html'">VOLTAR</button>
+        <input id="limpar" value="LIMPAR">
+        <input id="enviar" value="ENVIAR">
     </form>
-
 </body>
 </html>
